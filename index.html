@@ -13,15 +13,13 @@
     <section>
         <h2>Guess the Number</h2>
 
-        <input type="text" placeholder="Your name" id="YourName">
-        <button id="NameButton" onclick="getName()">Submit</button>
+        <button onclick="getName()">Begin!</button>
 
-        <p id="demo"></p>
-
-        <button onclick="getNumber()">ga verder </button>
-
-        <p id="game"></p>
-
+        <p id="name"></p>
+        <button id="game" onclick="playGame()"></button>
+        <p id="thanks"></p>
+        <button id="newgame" onclick="newGame()"></button>
+        <button id="cancel" onclick="return('bedankt')"></button>
 
     </section>
 </body>

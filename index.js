@@ -1,33 +1,55 @@
 function getName() {
-  if (YourName != null) {
-    document.getElementById("YourName").value;
-    var input = document.getElementById("YourName");
-    input.addEventListener("keyup", function (event) {
-      if (event.keyCode === 13) {
-        event.preventDefault();
-        document.getElementById("NameButton").click();
-      }
-    });
-    document.getElementById("demo").innerHTML =
-      "Hello " + YourName.value + "! How are you today?";
+  var person = prompt("Wat is jouw naam", "");
+  if (person != null) {
+    document.getElementById("name").innerHTML =
+      "Hallo " +
+      person +
+      ", hoe gaat het vandaag? <br> Zullen we een spelletje doen?";
+    document.getElementById("game").innerHTML = "Ja";
   }
+  console.log("naam");
 }
 
-function getNumber() {
-  document.getElementById("game").innerHTML =
-    "<input type='text' placeholder='1 to 20' id=YourNumber><button onclick='ChalengeNumber()'>guess</button>";
-  if (YourNumber != null) {
-  }
+function getRandomInt(min, max) {
+  console.log("random");
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min) + min);
 }
 
-var NumberToGuess = 8;
+function newGame() {
+  console.log(person);
+  console.log("new game");
+  document.getElementById("thanks").innerHTML =
+    "Bedankt voor het spelen " + person + ". <br> Wil je nog een keer?";
+  document.getElementById("new").innerHTML = "Ja";
+  playGame();
+}
 
-function ChalengeNumber() {
-  if (YourNumber.value != NumberToGuess) {
-    document.getElementById("game").innerHTML =
-      "The number " + YourNumber.value + " is not correct, try again";
-  } else {
-    document.getElementById("game").innerHTML =
-      "The number " + YourNumber.value + " is correct!";
+function playGame() {
+  console.log("playgame");
+  var NumberToGuess = getRandomInt(1, 25);
+  console.log(NumberToGuess);
+  var UserGuess = undefined;
+  while (UserGuess != NumberToGuess) {
+    console.log("niet geraden");
+    var UserGuess = prompt("Welk nummer tussen 1 en 25 denk je dat ik heb?");
+    if (UserGuess != NumberToGuess) {
+      console.log("geen match");
+      alert("nee, " + UserGuess + " is niet goed. Probeer opnieuw");
+    } else {
+      console.log("wel een match");
+      alert("ja! goed");
+    }
   }
+
+  // dit hieronder voert ie niet uit. Waarom niet?
+  document.getElementById("thanks").innerHTML =
+    "Bedankt " +
+    person +
+    ", dat was leuk! <br> Zullen we nog een keer een spelletje doen?";
+  document.getElementById("newgame").innerHTML = "Ja";
+  document.getElementById("cancel").innerHTML = "Nee";
+
+  // dit hierboven voert ie niet uit. Waarom niet?
 }
