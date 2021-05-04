@@ -2,8 +2,10 @@
 <html>
 
 <head>
-    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
     <script src="js/index.js"></script>
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
+
 </head>
 
 <body>
@@ -12,15 +14,14 @@
     </nav>
     <section>
         <h2>Guess the Number</h2>
+        <div class="flexbox">
 
-        <button onclick="getName()">Begin!</button>
+            <p id="start"><button class="flexbox" onclick="getName()">Begin!</button></p>
 
-        <p id="name"></p>
-        <button id="game" onclick="playGame()"></button>
-        <p id="thanks"></p>
-        <button id="newgame" onclick="newGame()"></button>
-        <button id="cancel" onclick="end()"></button>
-
+            <p id="name"></p>
+            <p id="newgame"></p>
+            <p id="cancel"></p>
+        </div>
     </section>
 </body>
 

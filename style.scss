@@ -3,4 +3,44 @@
 /* Global */
 * {
   box-sizing: border-box;
+  background-color: darkblue;
+  color: whitesmoke;
+}
+
+h2 {
+  font-family: Raleway;
+  font-weight: 700;
+  font-size: 3em;
+  text-align: center;
+}
+
+p {
+  font-family: Raleway;
+  font-weight: 300;
+  font-size: 1.5em;
+  margin: 10px 20px;
+}
+
+.flexbox {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-content: center;
+}
+
+.flexbox p {
+  flex: 0 1 auto;
+  align-self: center;
+  text-align: left;
+}
+
+button {
+  margin: 5px 20px;
+  padding: 15px;
+  background-color: whitesmoke;
+  color: darkblue;
+  font-family: Raleway;
+  font-weight: 500;
+  font-size: 1em;
 }

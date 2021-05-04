@@ -1,11 +1,13 @@
 function getName() {
   person = prompt("Wat is jouw naam", "");
   if (person != null) {
+    document.getElementById("start").innerText = "";
     document.getElementById("name").innerHTML =
       "Hallo " +
       person +
       ", hoe gaat het vandaag? <br> Zullen we een spelletje doen?";
-    document.getElementById("game").innerText = "Ja";
+    document.getElementById("newgame").innerHTML =
+      "<button class='flexbox' onclick='playGame()'>ja!</button>";
   }
   console.log("naam");
 }
@@ -20,14 +22,19 @@ function getRandomInt(min, max) {
 function newGame() {
   console.log(person);
   console.log("new game");
-  document.getElementById("thanks").innerHTML =
+  document.getElementById("name").innerHTML =
     "Bedankt voor het spelen " + person + ". <br> Wil je nog een keer?";
-  document.getElementById("newgame").innerText = "Ja";
+
+  document.getElementById("start").innerText = "";
+  document.getElementById("newgame").innerText = "";
+  document.getElementById("cancel").innerText = "";
   playGame();
 }
 
 function playGame() {
-  console.log("playgame");
+  document.getElementById("start").innerText = "";
+  document.getElementById("name").innerText = "";
+  document.getElementById("newgame").innerText = "";
   let NumberToGuess = getRandomInt(1, 25);
   console.log(NumberToGuess);
   let UserGuess = undefined;
@@ -43,14 +50,14 @@ function playGame() {
     }
   }
 
-  // dit hieronder voert ie niet uit. Waarom niet?
-  document.getElementById("thanks").innerHTML =
+  document.getElementById("name").innerHTML =
     "Bedankt " +
     person +
     ", dat was leuk! <br> Zullen we nog een keer een spelletje doen?";
-  document.getElementById("newgame").innerText = "Ja";
-  document.getElementById("cancel").innerText = "Nee";
-  // dit hierboven voert ie niet uit. Waarom niet?
+  document.getElementById("newgame").innerHTML =
+    "<button class='flexbox' onclick='newGame()'>ja</button>";
+  document.getElementById("cancel").innerHTML =
+    "<button class='flexbox' onclick='end()'>nee</button>";
 }
 
 function end() {
