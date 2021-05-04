@@ -1,11 +1,11 @@
 function getName() {
-  var person = prompt("Wat is jouw naam", "");
+  let person = prompt("Wat is jouw naam", "");
   if (person != null) {
-    document.getElementById("name").innerHTML =
+    document.getElementById("name").innerText =
       "Hallo " +
       person +
       ", hoe gaat het vandaag? <br> Zullen we een spelletje doen?";
-    document.getElementById("game").innerHTML = "Ja";
+    document.getElementById("game").innerText = "Ja";
   }
   console.log("naam");
 }
@@ -20,20 +20,20 @@ function getRandomInt(min, max) {
 function newGame() {
   console.log(person);
   console.log("new game");
-  document.getElementById("thanks").innerHTML =
+  document.getElementById("thanks").innerText =
     "Bedankt voor het spelen " + person + ". <br> Wil je nog een keer?";
-  document.getElementById("new").innerHTML = "Ja";
+  document.getElementById("new").innerText = "Ja";
   playGame();
 }
 
 function playGame() {
   console.log("playgame");
-  var NumberToGuess = getRandomInt(1, 25);
+  let NumberToGuess = getRandomInt(1, 25);
   console.log(NumberToGuess);
-  var UserGuess = undefined;
+  let UserGuess = undefined;
   while (UserGuess != NumberToGuess) {
     console.log("niet geraden");
-    var UserGuess = prompt("Welk nummer tussen 1 en 25 denk je dat ik heb?");
+    UserGuess = prompt("Welk nummer tussen 1 en 25 denk je dat ik heb?");
     if (UserGuess != NumberToGuess) {
       console.log("geen match");
       alert("nee, " + UserGuess + " is niet goed. Probeer opnieuw");
@@ -44,12 +44,11 @@ function playGame() {
   }
 
   // dit hieronder voert ie niet uit. Waarom niet?
-  document.getElementById("thanks").innerHTML =
+  document.getElementById("thanks").innerText =
     "Bedankt " +
     person +
     ", dat was leuk! <br> Zullen we nog een keer een spelletje doen?";
-  document.getElementById("newgame").innerHTML = "Ja";
-  document.getElementById("cancel").innerHTML = "Nee";
-
+  document.getElementById("newgame").innerText = "Ja";
+  document.getElementById("cancel").innerText = "Nee";
   // dit hierboven voert ie niet uit. Waarom niet?
 }
