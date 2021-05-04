@@ -1,7 +1,7 @@
 function getName() {
-  let person = prompt("Wat is jouw naam", "");
+  person = prompt("Wat is jouw naam", "");
   if (person != null) {
-    document.getElementById("name").innerText =
+    document.getElementById("name").innerHTML =
       "Hallo " +
       person +
       ", hoe gaat het vandaag? <br> Zullen we een spelletje doen?";
@@ -20,9 +20,9 @@ function getRandomInt(min, max) {
 function newGame() {
   console.log(person);
   console.log("new game");
-  document.getElementById("thanks").innerText =
+  document.getElementById("thanks").innerHTML =
     "Bedankt voor het spelen " + person + ". <br> Wil je nog een keer?";
-  document.getElementById("new").innerText = "Ja";
+  document.getElementById("newgame").innerText = "Ja";
   playGame();
 }
 
@@ -44,11 +44,16 @@ function playGame() {
   }
 
   // dit hieronder voert ie niet uit. Waarom niet?
-  document.getElementById("thanks").innerText =
+  document.getElementById("thanks").innerHTML =
     "Bedankt " +
     person +
     ", dat was leuk! <br> Zullen we nog een keer een spelletje doen?";
   document.getElementById("newgame").innerText = "Ja";
   document.getElementById("cancel").innerText = "Nee";
   // dit hierboven voert ie niet uit. Waarom niet?
+}
+
+function end() {
+  alert("Bedankt voor het spelen en tot de volgende keer, " + person + "!");
+  location.reload();
 }
