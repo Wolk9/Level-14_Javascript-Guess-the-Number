@@ -20,7 +20,7 @@ p {
   margin: 10px 20px;
 }
 
-.flexbox {
+.flexboxcontainer {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
@@ -28,18 +28,61 @@ p {
   align-content: center;
 }
 
-.flexbox p {
+.item > p {
+  display: flex;
   flex: 0 1 auto;
   align-self: center;
   text-align: left;
+  margin: 0px;
+  padding: 0px;
 }
 
 button {
+  border-radius: 10%;
   margin: 5px 20px;
   padding: 15px;
   background-color: whitesmoke;
   color: darkblue;
   font-family: Raleway;
-  font-weight: 500;
+  font-weight: 700;
   font-size: 1em;
+}
+
+/* 1792x828px at 326ppi */
+@media only screen and (device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2) {
+  h2 {
+    font-size: 5em;
+  }
+
+  p {
+    font-size: 3em;
+    text-align: center;
+  }
+
+  .item > p {
+    text-align: center;
+    align-content: center;
+    font-size: 1em;
+    flex: 0 1 auto;
+    margin: 0%;
+    padding: 0%;
+  }
+
+  button {
+    border: 0 solid;
+    border-radius: 10%;
+    background-color: whitesmoke;
+    color: darkblue;
+    font-family: Raleway;
+    font-weight: 700;
+    font-size: 1.2em;
+  }
+
+  .flexboxcontainer {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+  }
 }/*# sourceMappingURL=style.css.map */
