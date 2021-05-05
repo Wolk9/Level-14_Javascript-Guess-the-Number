@@ -148,7 +148,13 @@ function playGame() {
       );
     } else if (i == 0) {
       console.log("geen lives meer over");
-      alert("Helaas! je hebt het niet binnen " + lives + " beurten geraden.");
+      alert(
+        "Helaas! je hebt het getal " +
+          NumberToGuess +
+          " niet binnen " +
+          lives +
+          " beurten geraden."
+      );
       return einde();
     } else {
       console.log("wel een match");
@@ -231,7 +237,13 @@ function playHogerLager() {
       );
     } else if (i == 0) {
       console.log("geen lives meer over");
-      alert("Helaas! je hebt het niet binnen " + lives + " beurten geraden.");
+      alert(
+        "Helaas! je hebt het getal " +
+          NumberToGuess +
+          " niet binnen " +
+          lives +
+          " beurten geraden."
+      );
       return einde();
     } else {
       console.log("wel een match");
